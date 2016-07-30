@@ -1,0 +1,7 @@
+{
+  "name": "beard-science",
+  "dependencies": {},
+  "globalDependencies": {
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160728142841"
+  }
+}
