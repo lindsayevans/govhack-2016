@@ -14,5 +14,16 @@
     "morgan": "~1.7.0",
     "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "public"
+    },
+    "dependencies": {
+      "aframevr/aframe": "github:aframevr/aframe@^0.2.0"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
   }
 }
