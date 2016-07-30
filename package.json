@@ -2,6 +2,9 @@
   "name": "beard-science",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "6.2.0 || 5.x.x"
+  },
   "scripts": {
     "postinstall": "jspm install",
     "start": "node ./bin/www"
