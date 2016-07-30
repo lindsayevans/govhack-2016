@@ -6,6 +6,7 @@
     "node": "6.2.0 || 5.x.x"
   },
   "scripts": {
+    "preinstall": "npm rebuild node-sass",
     "postinstall": "jspm install",
     "start": "node ./bin/www"
   },
