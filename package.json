@@ -24,7 +24,8 @@
       "baseURL": "public"
     },
     "dependencies": {
-      "aframevr/aframe": "github:aframevr/aframe@^0.2.0"
+      "aframevr/aframe": "github:aframevr/aframe@^0.2.0",
+      "core-js": "npm:core-js@^2.4.1"
     },
     "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"

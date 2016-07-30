@@ -4,10 +4,33 @@
         <a-asset-item id="bird" src="models/bird.dae"></a-asset-item>
     </a-assets>
 
-    <a-collada-model id="bird-entity" src="#bird" position="0 0 -5" scale="10 10 10"></a-collada-model>
+    <!--<a-collada-model id="bird-entity" src="#bird" position="5 0 -10" scale="10 10 10" ></a-collada-model>-->
 
-    <a-entity camera look-controls wasd-controls></a-entity>
+    <a-entity id="coins">
+    </a-entity>
+<!--
+    <a-entity class="coin" id="coin-1" position="-4 0 -10">
+        <a-cylinder color="white" height="0.1" radius="1.5" rotation="-90 0 0"></a-cylinder>
+        <a-animation attribute="rotation"
+            begin="spin"
+            dur="1000"
+            fill="forwards"
+            to="180 0 0"
+            repeat="0"></a-animation>
+    </a-entity>-->
 
-    <a-sky color="#00f"></a-sky>
+    <!--<a-cylinder id="coin-1" color="green" height="0.1" radius="1.5" position="0 0 -10" rotation="-90 0 0"></a-cylinder>-->
+    <!--<a-cylinder id="coin-2" color="blue" height="0.1" radius="1.5" position="-4 0 -10" rotation="-90 0 0"></a-cylinder>
+    <a-cylinder id="coin-3" color="purple" height="0.1" radius="1.5" position="-8 0 -10" rotation="-90 0 0"></a-cylinder>-->
+
+    <a-entity camera look-controls wasd-controls>
+        <a-entity cursor="fuse: true; maxDistance: 30; timeout: 500"
+                    position="0 0 -5"
+                    geometry="primitive: ring"
+                    material="color: white; shader: flat">
+        </a-entity>
+    </a-entity>
+
+    <a-sky color="#000"></a-sky>
 
 </a-scene>
