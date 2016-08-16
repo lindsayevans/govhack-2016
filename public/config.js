@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/",
+  baseURL: "/public",
   defaultJSExtensions: true,
   transpiler: "typescript",
   paths: {

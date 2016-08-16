@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+    <script src="public/jspm_packages/system.js"></script>
+    <script src="public/config.js"></script>
+    <script>
+      System.import('js/main');
+    </script>
+  </head>
+  <body>
+
+    <a-scene id="game" xstats>
+
+        <a-assets>
+            <a-asset-item id="trees" src="public/models/Environment/treegroup.dae"></a-asset-item>
+            <a-asset-item id="trees-rocks" src="public/models/Environment/treerocks.dae"></a-asset-item>
+            <a-asset-item id="terrain" src="public/models/Environment/terrainnolight.dae"></a-asset-item>
+        </a-assets>
+
+        <a-sky src="public/28325293130_3c08cde648_k.jpg"></a-sky>
+        <a-entity light="color: #fff; intensity: 1.5" scale="100 100 100" position="4 4 10"></a-entity>
+        <a-entity light="type: ambient; color: #fff; intensity: 1.5" position="4 4 10"></a-entity>
+        <a-entity id="flash" light="type: directional; color: #fff; intensity: 0" position="0 0 0">
+            <a-animation attribute="light.intensity" from="0" to="1000" begin="flash" easing="ease-in-out" dur="100" direction="alternate" fill="both" repeat="1"></a-animation>
+        </a-entity>
+
+
+        <!--<a-plane src="ground.png" rotation="-90 0 0" width="40" height="40"></a-plane>-->
+
+        <a-collada-model src="#trees" position="0 0 -12" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees-rocks" position="-8 0 -10" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees" position="-12 0 -6" scale="0.5 0.5 0.5"></a-collada-model>
+        
+        <a-collada-model src="#trees" position="-14 0 0" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees-rocks" position="-12 0 6" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees" position="-8 0 10" scale="0.5 0.5 0.5"></a-collada-model>
+
+        <a-collada-model src="#trees" position="0 0 12" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees-rocks" position="8 0 10" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees" position="12 0 6" scale="0.5 0.5 0.5"></a-collada-model>
+
+        <a-collada-model src="#trees" position="14 0 0" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees-rocks" position="12 0 -6" scale="0.5 0.5 0.5"></a-collada-model>
+        <a-collada-model src="#trees" position="8 0 -10" scale="0.5 0.5 0.5"></a-collada-model>
+
+
+        <a-collada-model src="#terrain" scale="6 6 6" rotation="0 270 0" position="0 0 10"></a-collada-model>
+
+        <a-entity id="coins">
+            <!--<a-animation attribute="rotation"
+                begin="spin"
+                dur="1000"
+                fill="forwards"
+                to="0 360 0"
+                repeat="indefinite"></a-animation>-->
+        </a-entity>
+        
+        <a-entity id="camera" camera="active: true" look-controls wasd-controls position="0 2 0">
+            <a-entity cursor="fuse: true; maxDistance: 30; timeout: 200"
+                        position="0 0 -10"
+                        geometry="primitive: ring"
+                        material="opacity: 0.666; color: red; shader: flat">
+
+                <!--<a-animation begin="click" easing="ease-in" attribute="scale"
+                            fill="backwards" from="0.1 0.1 0.1" to="1 1 1"></a-animation>-->
+                <!--<a-animation begin="fusing"" attribute="scale"
+                            fill="forwards" from="1 1 1" to="0.1 0.1 0.1"></a-animation>-->
+            </a-entity>
+            <a-entity>
+                <!--<a-cube
+                    position="0 -1 -1"
+                    rotation="20 40 0"
+                            material="opacity: 1; color: #ffe0bd">
+                        <a-animation class="movement" attribute="scale"
+                            dur="333"
+                            fill="forwards"
+                            to="0.666 0.666 0.666"
+                            direction="alternate"
+                            repeat="indefinite" easing="ease-out-bounce"></a-animation>
+                </a-cube>-->
+            </a-entity>
+        </a-entity>
+        <a-entity id="top-camera" camera="active: false" position="0 50 0" rotation="-90 0 0"></a-entity>
+
+    </a-scene>
+
+  </body>
+</html>

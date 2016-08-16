@@ -3,9 +3,12 @@ import 'whatwg-fetch';
 //import {AFRAME} from 'aframevr/aframe';
 
 declare var AFRAME: any;
+declare var THREE: any;
 
 export function bootstrap() {
     // console.log('Hello from bootstrap.ts!');
+
+    registerShaders();
 
     let group = 'Mammals';
     let search = 'possum';
@@ -145,4 +148,26 @@ function getColour(type: string): string {
 
     return colours[type];
 
+}
+
+function registerShaders() {
+    AFRAME.registerShader('line-dashed', {
+        schema: {
+            dashSize: { default: 3 },
+            lineWidth: { default: 1 }
+        },
+        /**
+         * `init` used to initialize material. Called once.
+         */
+        init: function (data) {
+            this.material = new THREE.LineDashedMaterial(data);
+        },
+        /**
+         * `update` used to update the material. Called on initialization and when data updates.
+         */
+        update: function (data) {
+            this.material.dashsize = data.dashsize;
+            this.material.linewidth = data.linewidth;
+        }
+    });
 }
